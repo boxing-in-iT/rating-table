@@ -48,7 +48,13 @@ code {
 }
 
 .border-ava {
-  border: 1px solid #9b5cae;
+  border: 2px solid #9b5cae;
+  border-radius: 50px;
+  padding: 0.25rem;
+}
+
+.transparent-border {
+  border: 2px solid transparent; /* Добавляем прозрачную границу */
   border-radius: 50px;
   padding: 0.25rem;
 }

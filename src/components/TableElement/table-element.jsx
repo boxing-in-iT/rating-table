@@ -8,7 +8,7 @@ const TableElement = (props) => {
   return (
     <div className="table-row" onClick={() => setIsClicked(!isClicked)}>
       <div>{index}</div>
-      <div className={isClicked ? "border-ava" : ""}>
+      <div className={isClicked ? "border-ava" : "transparent-border"}>
         <img src={ava} />
       </div>
       <div className="user-info">
