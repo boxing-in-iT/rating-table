@@ -1,13 +1,10 @@
-import logo from "./logo.svg";
 import "./App.css";
 import TableElement from "./components/TableElement/table-element";
 import RatingTable from "./components/RatingTable/rating-table";
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 
 function App() {
   const [users, setUsers] = useState([]);
-  const [loadedUsers, setLoadedUsers] = useState(50); // Количество загруженных пользователей
-  const containerRef = useRef(null);
 
   useEffect(() => {
     // Функция генерации случайного пользователя
@@ -34,38 +31,17 @@ function App() {
       };
     }
 
-    // Генерация пользователей и установка первых 50 в состояние
+    // Генерация пользователей и установка их в состояние
     const generatedUsers = [];
-    for (let i = 0; i < loadedUsers; i++) {
+    for (let i = 0; i < 1000; i++) {
       generatedUsers.push(generateRandomUser());
     }
     setUsers(generatedUsers);
-
-    // Обработчик события скролла для ленивой загрузки
-    function handleScroll() {
-      if (!containerRef.current) return; // Проверяем, что containerRef.current существует
-      const { scrollTop, clientHeight, scrollHeight } = containerRef.current;
-      if (scrollTop + clientHeight >= scrollHeight - 20) {
-        setLoadedUsers((prevLoadedUsers) => prevLoadedUsers + 50);
-      }
-    }
-
-    if (containerRef.current) {
-      // Проверяем, что containerRef.current существует перед добавлением слушателя
-      containerRef.current.addEventListener("scroll", handleScroll);
-    }
-
-    return () => {
-      if (containerRef.current) {
-        // Удаляем слушатель при размонтировании компонента
-        containerRef.current.removeEventListener("scroll", handleScroll);
-      }
-    };
-  }, [loadedUsers]);
+  }, []);
 
   return (
     <div className="App">
-      <RatingTable users={users} containerRef={containerRef} />
+      <RatingTable users={users} />
     </div>
   );
 }

@@ -8,7 +8,7 @@ const TableElement = (props) => {
     <div className="table-row">
       <div>{index}</div>
       <div>
-        <img src={ava} alt="avatar" />
+        <img src={ava} />
       </div>
       <div className="user-info">
         <h3>{userName}</h3>
