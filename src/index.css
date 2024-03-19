@@ -46,3 +46,9 @@ code {
 .user-info p {
   margin: 0; /* Убираем стандартный отступ */
 }
+
+.border-ava {
+  border: 1px solid #9b5cae;
+  border-radius: 50px;
+  padding: 0.25rem;
+}

@@ -1,13 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import ava from "../../assets/img/helmet.svg";
 
 const TableElement = (props) => {
+  const [isClicked, setIsClicked] = useState(false);
   const { userName, speed, time, index } = props;
 
   return (
-    <div className="table-row">
+    <div className="table-row" onClick={() => setIsClicked(!isClicked)}>
       <div>{index}</div>
-      <div>
+      <div className={isClicked ? "border-ava" : ""}>
         <img src={ava} />
       </div>
       <div className="user-info">
