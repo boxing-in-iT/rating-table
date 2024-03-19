@@ -13,38 +13,35 @@ code {
 }
 
 .table {
-  width: 25vh;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-start;
 }
 
 .table-row {
-  margin-top: 1em; /* Уменьшаем отступ между строками */
   width: 100%;
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-start; /* Изменено на flex-start */
   align-items: center;
 }
 
 .table-row img {
   width: 3em;
-  height: 3em; /* Устанавливаем фиксированную высоту для аватарки */
-  object-fit: cover; /* Чтобы изображение вписывалось в размеры без искажения */
+  height: 3em;
+  object-fit: cover;
+  margin-right: 1em; /* Добавлен отступ справа для изображения */
 }
 
 .user-info {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: flex-start;
 }
 
 .user-info h3,
 .user-info p {
-  margin: 0; /* Убираем стандартный отступ */
+  margin: 0;
 }
 
 .border-ava {
